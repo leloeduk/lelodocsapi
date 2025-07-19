@@ -1,0 +1,21 @@
+# Environnement virtuel
+venv/
+.env
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+
+# Base de données locale
+db.sqlite3
+
+# Staticfiles collectés
+/staticfiles/
+
+# IDE
+.vscode/
+.idea/
+
+# Autres
+*.log
+.DS_Store
