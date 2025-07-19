@@ -1,7 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
-
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.pagination import PageNumberPagination
@@ -19,6 +16,11 @@ class ExamViewSet(viewsets.ModelViewSet):
     pagination_class = ExamPagination
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['type', 'year', 'subject', 'is_premium']
-    search_fields = ['title', 'subject', 'type']
+    filterset_fields = ['exam_type', 'diploma_type', 'year', 'subject', 'is_premium', 'serie_bac']
+    search_fields = ['title', 'subject', 'exam_type', 'diploma_type']
     ordering_fields = ['year', 'created_at']
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Optional: Add any additional filtering logic here
+        return queryset
