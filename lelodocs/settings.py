@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-u($-o26)(7@##98$+4rxi#j#5hc-o+a+vun5unxqbo*mcxfp*&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["lelodocsapi.onrender.com", "localhost", "127.0.0.1" ,"127.0.0.1:8000"]
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'exams', 
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
